@@ -51,7 +51,7 @@ const Weather = () => {
               return;
             }
             console.log(data);
-            const icon = allIcons[data.weather[0].icon] || clear_icon
+            const icon = allIcons[data.weather[0].icon] || clear_icon;
             setWeatherData({
               humidity:data.main.humidity,
               windspeed: data.wind.speed,
@@ -65,7 +65,7 @@ const Weather = () => {
         }
       }
       useEffect(()=>{
-        search("london")
+        search("Dhaka")
       },[])
  
   return (
@@ -78,7 +78,7 @@ const Weather = () => {
       </div>
       {weatherData?<>
         <img src={weatherData.icon} alt="" className='weather-icon' />
-      <p className='temperature' >{weatherData.temperature}°C</p>
+      <p className='temperature'>{weatherData.temperature}°C</p>
       <p className='location'>{weatherData.location}</p>
       <div className="weather-data">
         <div className="col">
@@ -96,8 +96,8 @@ const Weather = () => {
           </div>
         </div>
       </div>
-      </>:<div style={{height:"50vh",display:"flex",justifyContent:"center",alignItems:"center"}}>
-      No Data Found!
+      </>:<div className='nothing'>
+      No City Found!
         </div>}
       
     </div>
